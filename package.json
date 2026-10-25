@@ -1,0 +1,31 @@
+{
+  "name": "aistudybuddy",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000A\u0000I\u0000-\u0000S\u0000t\u0000u\u0000d\u0000y\u0000-\u0000B\u0000u\u0000d\u0000d\u0000y\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaurabhhDubey/AI-Study-Buddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaurabhhDubey/AI-Study-Buddy/issues"
+  },
+  "homepage": "https://github.com/SaurabhhDubey/AI-Study-Buddy#readme",
+  "dependencies": {
+    "@langchain/core": "^1.3.0",
+    "@langchain/google-genai": "^2.3.4",
+    "dotenv": "^18.0.9",
+    "langchain": "^1.5.19"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
