@@ -1,17 +1,9 @@
 
 import "dotenv/config";
-
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
-
-import {
-  ChatPromptTemplate,
-  MessagesPlaceholder,
-} from "@langchain/core/prompts";
-
+import {ChatPromptTemplate, MessagesPlaceholder,} from "@langchain/core/prompts";
 import { RunnableWithMessageHistory } from "@langchain/core/runnables";
-
 import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
-
 import * as readline from "node:readline/promises";
 import { stdin, stdout } from "node:process";
 
