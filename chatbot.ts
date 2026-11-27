@@ -7,13 +7,13 @@ import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
 import * as readline from "node:readline/promises";
 import { stdin, stdout } from "node:process";
 
-// 1. Connect to Gemini
+
 const model = new ChatGoogleGenerativeAI({
   model: "gemini-2.5-flash",
   temperature: 0.3,
 });
 
-// 2. Create the system prompt
+
 const prompt = ChatPromptTemplate.fromMessages([
   [
     "system",
@@ -26,20 +26,20 @@ const prompt = ChatPromptTemplate.fromMessages([
     Remember the conversation context.`
   ],
 
-  // Space for previous conversation
+  
   new MessagesPlaceholder("history"),
 
-  // Current user question
+  
   ["human", "{input}"],
 ]);
 
-// 3. Create a place to store chat histories
+
 const historyStore = new Map<
   string,
   InMemoryChatMessageHistory
 >();
 
-// 4. Get or create conversation history
+
 function getMessageHistory(sessionId: string) {
   if (!historyStore.has(sessionId)) {
     historyStore.set(
@@ -51,10 +51,10 @@ function getMessageHistory(sessionId: string) {
   return historyStore.get(sessionId)!;
 }
 
-// 5. Connect prompt and Gemini
+
 const chain = prompt.pipe(model);
 
-// 6. Add memory to our chain
+
 const chatbot = new RunnableWithMessageHistory({
   runnable: chain,
   getMessageHistory,
@@ -62,13 +62,13 @@ const chatbot = new RunnableWithMessageHistory({
   historyMessagesKey: "history",
 });
 
-// 7. Create terminal input
+
 const rl = readline.createInterface({
   input: stdin,
   output: stdout,
 });
 
-// 8. Start chatbot
+
 async function main() {
   console.log("\n🤖 Welcome to AI Study Buddy!");
   console.log("Type 'exit' to stop chatting.\n");
